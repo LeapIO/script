@@ -1,0 +1,1 @@
+在vdbench下面运行 ./vdbench -f 脚本位置
