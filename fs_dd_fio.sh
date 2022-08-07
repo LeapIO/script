@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 #卸载所有的磁盘挂载（除了sda）
 listDevice=($(df -lh | grep '/dev/sd[b-z]' | awk '{print $1}'))
 listMountAddr=($(df -lh | grep '/dev/sd[b-z]' | awk '{print $6}'))
