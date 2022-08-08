@@ -1,42 +1,42 @@
-在vdbench下面运行 ./vdbench -f 脚本位置
-运行结束后会生成一个output文件夹，里面存放测试结果（会给出文件夹地址）
-具体测试前可以先运行一下test看看是否是期望输出  test对sdb和c读写各三十秒 ...
-（1）HD：主机定义
- •    如果您希望展示当前主机，则设置 hd= localhost。如果希望指定一个远程主机，hd= label。
- •    system= IP 地址或网络名称。
- 注意：vdbench=dir ，这里的目录是指所有主机上的目录，这就表示，所有主机上的vdbench目录都要一样，且对应的配置要放在vdbench下面；
+  在vdbench下面运行 ./vdbench -f 脚本位置
+  运行结束后会生成一个output文件夹，里面存放测试结果（会给出文件夹地址）
+  具体测试前可以先运行一下test看看是否是期望输出  test对sdb和c读写各三十秒 ...
+  （1）HD：主机定义
+   •    如果您希望展示当前主机，则设置 hd= localhost。如果希望指定一个远程主机，hd= label。
+   •    system= IP 地址或网络名称。
+   注意：vdbench=dir ，这里的目录是指所有主机上的目录，这就表示，所有主机上的vdbench目录都要一样，且对应的配置要放在vdbench下面；
 
-（2）SD：存储定义
- •    sd= 标识存储的名称。
- •    host= 存储所在的主机的 ID。
- •    lun= 原始磁盘、磁带或文件系统的名称。vdbench 也可为您创建一个磁盘。
- •    threads= 对 SD 的最大并发 I/O 请求数量。默认为 8。
- •    hitarea= 调整读取命中百分比的大小。默认为 1m。
- •    openflags= 用于打开一个 lun 或一个文件的 flag_list，为了贴近真实场景，一般在这里选择o_direct，绕过缓存机制，直接写盘
- 
- （3）WD：工作负载定义
- •    wd= 标识工作负载的名称。
- •    sd= 要使用的存储定义的 ID。
- •    host= 要运行此工作负载的主机的 ID。默认设置为 localhost。
- •    rdpct= 读取请求占请求总数的百分比。
- •    rhpct= 读取命中百分比。默认设置为 0。
- •    whpct= 写入命中百分比。默认设置为 0。
- •    xfersize= 要传输的数据大小。默认设置为 4k。
- •    seekpct= 随机寻道的百分比。可为随机值。
- •    openflags= 用于打开一个 lun 或一个文件的 flag_list。
- •    iorate= 此工作负载的固定 I/O 速率。
- 
- （4）RD：运行定义
- •    rd= 标识运行的名称。
- •    wd= 用于此运行的工作负载的 ID。
- •    iorate= (#,#,…) 一个或多个 I/O 速率。（这里可以控制运行的iops，如果不控制就设置成max）
- •    elapsed= time：以秒为单位的运行持续时间。默认设置为30。(设置长时间的运行，可能会使得数据更加稳定)
- •    warmup= time：加热期，最终会被忽略。
- •    distribution= I/O 请求的分布：指数、统一或确定性。
- •    pause= 在下一次运行之前休眠的时间，以秒为单位。
- •    openflags= 用于打开一个 lun 或一个文件的 flag_list。
- 
- （5）output文件夹：
+  （2）SD：存储定义
+   •    sd= 标识存储的名称。
+   •    host= 存储所在的主机的 ID。
+   •    lun= 原始磁盘、磁带或文件系统的名称。vdbench 也可为您创建一个磁盘。
+   •    threads= 对 SD 的最大并发 I/O 请求数量。默认为 8。
+   •    hitarea= 调整读取命中百分比的大小。默认为 1m。
+   •    openflags= 用于打开一个 lun 或一个文件的 flag_list，为了贴近真实场景，一般在这里选择o_direct，绕过缓存机制，直接写盘
+
+   （3）WD：工作负载定义
+   •    wd= 标识工作负载的名称。
+   •    sd= 要使用的存储定义的 ID。
+   •    host= 要运行此工作负载的主机的 ID。默认设置为 localhost。
+   •    rdpct= 读取请求占请求总数的百分比。
+   •    rhpct= 读取命中百分比。默认设置为 0。
+   •    whpct= 写入命中百分比。默认设置为 0。
+   •    xfersize= 要传输的数据大小。默认设置为 4k。
+   •    seekpct= 随机寻道的百分比。可为随机值。
+   •    openflags= 用于打开一个 lun 或一个文件的 flag_list。
+   •    iorate= 此工作负载的固定 I/O 速率。
+
+   （4）RD：运行定义
+   •    rd= 标识运行的名称。
+   •    wd= 用于此运行的工作负载的 ID。
+   •    iorate= (#,#,…) 一个或多个 I/O 速率。（这里可以控制运行的iops，如果不控制就设置成max）
+   •    elapsed= time：以秒为单位的运行持续时间。默认设置为30。(设置长时间的运行，可能会使得数据更加稳定)
+   •    warmup= time：加热期，最终会被忽略。
+   •    distribution= I/O 请求的分布：指数、统一或确定性。
+   •    pause= 在下一次运行之前休眠的时间，以秒为单位。
+   •    openflags= 用于打开一个 lun 或一个文件的 flag_list。
+
+   （5）output文件夹：
        （1）errorlog.html——当为测试启用了数据验证（-jn）时，它可包含一些数据块中的错误的相关信息：
 
        无效的密钥读取
