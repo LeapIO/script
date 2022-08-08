@@ -1,6 +1,11 @@
         在vdbench下面运行 ./vdbench -f 脚本位置
-        运行结束后会生成一个output文件夹，里面存放测试结果（会给出文件夹地址）
+        运行结束后会生成一个output文件夹，里面存放测试结果（会给出文件夹地址，内容描述在最后）
+        
+        vdbench校验数据的参数为-v或-j，这个过程会为每一次写操作记录日志用于后续校验。（如./vdbench -j -f ~/shellFiles/test11）（-f为给出参数文件地址）
+        使用-v参数，则生成的校验日志直接保存于内存中，使用-j参数则生成一个校验日志的文件，第二次校验时，-jr即可进行日志恢复进行校验。-v直接记录于内存之中，速度更快，但如果存储系统出         现重启或内存清理，那么-v参数记录的校验日志就丢失了；-j直接写到磁盘上，安全有保证但速度会慢一下，此时可选择-jn，异步写到磁盘上，速度和安全都有一定的保证。
+
         具体测试前可以先运行一下test看看是否是期望输出  test对sdb和c读写各三十秒 ...
+        
         （1）HD：主机定义
          •    如果您希望展示当前主机，则设置 hd= localhost。如果希望指定一个远程主机，hd= label。
          •    system= IP 地址或网络名称。
@@ -92,4 +97,4 @@
             （9）swat_mon.txt，swat_mon_total.txt
 
             vdbench 与 Sun StorageTekTM Workload Analysis Tool (Swat) Trace Facility (STF) 相结合，支持重放使用 Swat 创建的一个轨迹的 I/O 工作负载。
-             Swat 使用 Create Replay File 选项创建和处理的轨迹文件会创建文件 flatfile.bin（flatfile.bin.gz 用于 vdbench403 和更高版本），其中包含 Swat 所识别的每个 I/O 操作的一条记录。
+             Swat 使用 Create Replay File 选项创建和处理的轨迹文件会创建文件 flatfile.bin（flatfile.bin.gz 用于 vdbench403 和更高版本），其中包含 Swat 所识别的每个 I/O 操作的             一条记录。
