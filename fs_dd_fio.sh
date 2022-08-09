@@ -68,16 +68,16 @@ do
         " | mkfs.${fs} /dev/${disk_name[i]}$j
         if [ ! -d "/mnt/disk$[i]$[j]" ]; then
             mkdir /mnt/disk$[i]$[j]
-            mount /dev/${disk_name[i]}$j /mnt/disk$[i]$[j]
+            mount /dev/${disk_name[i]}$j /mnt/${disk_name[i]}$j
         else
-            mount /dev/${disk_name[i]}$j /mnt/disk$[i]$[j]
+            mount /dev/${disk_name[i]}$j /mnt/${disk_name[i]}$j
         fi
 
     done
 done
 
 echo "############# dd 指令#################"
-midfile="/mnt/disk2/testw.dbf"
+midfile="/mnt/sdb1/testw.dbf"
 number=1000000
 echo "测试磁盘写能力"
 time dd if=/dev/zero bs=4k count=$number of=$midfile
