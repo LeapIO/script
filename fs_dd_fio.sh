@@ -66,8 +66,8 @@ do
         echo "y
 
         " | mkfs.${fs} /dev/${disk_name[i]}$j
-        if [ ! -d "/mnt/disk$[i]$[j]" ]; then
-            mkdir /mnt/disk$[i]$[j]
+        if [ ! -d "/mnt/${disk_name[i]}$j" ]; then
+            mkdir /mnt/${disk_name[i]}$j
             mount /dev/${disk_name[i]}$j /mnt/${disk_name[i]}$j
         else
             mount /dev/${disk_name[i]}$j /mnt/${disk_name[i]}$j
