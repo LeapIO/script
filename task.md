@@ -12,4 +12,4 @@ seq|task
 ##### 2022.08.11
 seq|task
 -|-
-1|fio的测试用例包含的尽量多，包括众多的边界条件等，极端的io size以及io总量等等
+1|fio的测试用例包含的尽量多，包括众多的边界条件等，极端的io size以及io总量等等。具体参数均包含 `numjobs/ioengine/iodepth=8/bs/size/runtime/rw`
