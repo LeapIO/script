@@ -11,20 +11,20 @@ for((i=0;i<$size;i++))
 do
         a=($(echo ${list1[$i]} | sed 's/\// /g'));
         pci_list[$i]=${a[1]}
-        echo ${a[*]}
+#        echo ${a[*]}
 done
 
-#获取设备列表
+#获取disk列表 取出模式sdb sdc sdd...
 disklist=($(lshw -short -C disk | awk '{print $2}' | sed -n '3,$p' |sed ":label;N;s/\n/ /;b label" | sed 's/\/dev\///g'))
 
 
-echo '第一行为pcie接口，第二行为相应的连接设备，选择要测试的pcie接口'
+echo '第一行为pcie接口，第二行为pcie接口下的磁盘'
 printf "%-8s" ${pci_list[*]}
 echo ' '
 printf "%-8s" ${disklist[*]}
-echo ''
+echo ' '
 
-
+# 接口及其连接设备数量的映射
 declare -A mapping
 for((i=0;i<${#pci_list[@]};i++))
 do
@@ -50,12 +50,12 @@ do
                 break
         fi
 done
-
+echo "接口下的磁盘："
 echo ${pcie[*]}
 
+#模式转换 sdb|sdc|sdd|sde
 dev_str=$(echo ${pcie[*]}|sed 's/ /|/g');
-echo $dev_str
-
+#echo $dev_str
 
 
 #
