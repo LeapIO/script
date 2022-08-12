@@ -35,7 +35,7 @@ done
 #seekpct= 随机寻道的百分比。可为随机值。
 #openflags= 用于打开一个 lun 或一个文件的 flag_list。
 #iorate= 此工作负载的固定 I/O 速率。
-
+#TODO:运行参数修改这里
 echo "wd=wd1,sd=sd*,rdpct=0,xfersize=1k" | tee -a ./vdbench.conf
 echo "wd=wd2,sd=sd*,rdpct=100,xfersize=100k" | tee -a ./vdbench.conf
 #echo "wd=wd2,sd=sd*,rdpct=50,xfersize=16k" | tee -a ./vdbench.conf
@@ -54,5 +54,6 @@ echo "wd=wd2,sd=sd*,rdpct=100,xfersize=100k" | tee -a ./vdbench.conf
 #distribution= I/O 请求的分布：指数、统一或确定性。
 #pause= 在下一次运行之前休眠的时间，以秒为单位。
 #openflags= 用于打开一个 lun 或一个文件的 flag_list。
+#TODO:运行参数修改这里
 echo "rd=rd1,wd=wd1,iorate=max,warmup=10,elapsed=40,interval=10" | tee -a ./vdbench.conf
 echo "rd=rd2,wd=wd2,iorate=max,warmup=10,elapsed=40,interval=10" | tee -a ./vdbench.conf
