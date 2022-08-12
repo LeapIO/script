@@ -139,3 +139,8 @@ done
 #调用fio.sh
 #echo "盘符信息:"$dev_str
 ./fio.sh $dev_str
+
+#调用vdbench
+./vdbench.sh $dev_str
+vdbenchPath="/root/vdbench/vdbench"
+${vdbenchPath} -f ./vdbench.conf -o ./vdbench/output
