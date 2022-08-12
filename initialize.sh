@@ -136,4 +136,6 @@ do
 
     done
 done
-
+#调用fio.sh
+#echo "盘符信息:"$dev_str
+./fio.sh $dev_str
