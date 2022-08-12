@@ -12,7 +12,7 @@ dev_list=($(echo $dev_str | sed 's/|/ /g'))
 #rwmixread 混合读写读占的比例 eg:70 == 70%read 30write
 #要执行的指令参数列表（一般只用修改此数组）
 #格式 numjobs_ioengine_iodepth_bs_size_runtime_rw_rwmixread
-fun_list=('10_libaio_8_4K_1G_60_read'
+fun_list=('10_libaio_8_4K_5G_600_read'
 	#'1_libaio_1_1K_5G_600_randread'
 	#'1_libaio_1_1K_5G_600_write'
 	#'1_libaio_1_1K_5G_600_randwirte'
