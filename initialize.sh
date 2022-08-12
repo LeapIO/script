@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+vdbenchPath="/root/vdbench/vdbench"
 #查找pcie接口及其挂载盘符
 #获取pci地址列表
 list1=($(lshw -short -C disk | awk '{print $1}' | sed -n '3,$p' |sed ":label;N;s/\n/ /;b label"))
@@ -142,5 +142,4 @@ done
 
 #调用vdbench
 ./gen_vdbench_config.sh $dev_str
-vdbenchPath="/root/vdbench/vdbench"
 ${vdbenchPath} -f ./vdbench.conf -o ./vdbench/output
