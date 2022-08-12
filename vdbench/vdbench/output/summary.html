@@ -1,0 +1,51 @@
+<title>Vdbench output/summary.html</title><pre>
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+Vdbench summary report, created 14:33:32 八月 07 2022 CST (06:33:32 八月 07 2022 UTC)
+
+Link to logfile:                 <A HREF="logfile.html">logfile</A>
+Run totals:                      <A HREF="totals.html">totals</A>
+Vdbench status:                  <A HREF="status.html">status</A>
+Copy of input parameter files:   <A HREF="parmfile.html">parmfile</A>
+Copy of parameter scan detail:   <A HREF="parmscan.html">parmscan</A>
+Link to errorlog:                <A HREF="errorlog.html">errorlog</A>
+Link to flatfile:                <A HREF="flatfile.html">flatfile</A>
+
+Link to HOST reports:            <A HREF="localhost.html">localhost</A>
+Link to response time histogram: <A HREF="histogram.html">histogram</A>
+Link to workload skew report:    <A HREF="skew.html">skew</A>
+Link to SD reports:              <A HREF="sd1.html">sd1</A>      <A HREF="sd2.html">sd2</A>     
+
+Link to workload report:         <A HREF="wd1.html">wd1</A>
+Link to workload report:         <A HREF="wd2.html">wd2</A>
+
+Link to Run Definitions:         <A HREF="#_2121744517">rd1 For loops: None</A>
+                                 <A HREF="#_1066376662">rd2 For loops: None</A>
+
+Link to config output:           <A HREF="config.html">config</A>
+
+<a name="_2121744517"></a><i><b>14:33:35.002 Starting RD=rd1; I/O rate: Uncontrolled MAX; elapsed=20 warmup=10; For loops: None</b></i>
+
+
+八月 07, 2022    interval        i/o   MB/sec   bytes   read     resp     read    write     read    write     resp  queue  cpu%  cpu%
+                               rate  1024**2     i/o    pct     time     resp     resp      max      max   stddev  depth sys+u   sys
+14:33:40.124           1   139963.4   546.73    4096   0.00    0.098    0.000    0.098     0.00     3.86    0.048   13.8  52.3  32.5
+14:33:45.023           2   150427.6   587.61    4096   0.00    0.096    0.000    0.096     0.00     2.29    0.028   14.4  61.5  44.6
+14:33:50.018           3   151925.0   593.46    4096   0.00    0.096    0.000    0.096     0.00     5.02    0.027   14.5  61.4  44.4
+14:33:55.020           4   152058.4   593.98    4096   0.00    0.095    0.000    0.095     0.00     2.33    0.024   14.5  61.7  45.0
+14:34:00.013           5   151865.8   593.23    4096   0.00    0.096    0.000    0.096     0.00     3.86    0.026   14.5  62.0  45.8
+14:34:05.050           6   151865.8   593.23    4096   0.00    0.096    0.000    0.096     0.00     6.78    0.038   14.5  61.6  44.4
+14:34:05.116     avg_3-6   151928.8   593.47    4096   0.00    0.096    0.000    0.096     0.00     6.78    0.029   14.5  61.7  44.9
+
+<a name="_1066376662"></a><i><b>14:34:06.000 Starting RD=rd2; I/O rate: Uncontrolled MAX; elapsed=20 warmup=10; For loops: None</b></i>
+
+
+八月 07, 2022    interval        i/o   MB/sec   bytes   read     resp     read    write     read    write     resp  queue  cpu%  cpu%
+                               rate  1024**2     i/o    pct     time     resp     resp      max      max   stddev  depth sys+u   sys
+14:34:11.011           1   101151.8   395.12    4096 100.00    0.141    0.141    0.000     3.12     0.00    0.028   14.3  29.6  22.1
+14:34:16.010           2   111813.6   436.77    4096 100.00    0.141    0.141    0.000     3.45     0.00    0.028   15.8  31.5  25.9
+14:34:21.008           3   112159.0   438.12    4096 100.00    0.141    0.141    0.000     2.06     0.00    0.022   15.8  30.9  26.3
+14:34:26.011           4   111997.8   437.49    4096 100.00    0.141    0.141    0.000     2.77     0.00    0.023   15.8  31.1  26.2
+14:34:31.008           5   112114.8   437.95    4096 100.00    0.141    0.141    0.000     2.68     0.00    0.023   15.8  30.7  25.8
+14:34:36.017           6   111930.0   437.23    4096 100.00    0.141    0.141    0.000     5.31     0.00    0.035   15.8  30.8  25.8
+14:34:36.032     avg_3-6   112050.4   437.70    4096 100.00    0.141    0.141    0.000     5.31     0.00    0.026   15.8  30.9  26.0
+14:34:36.566 Vdbench execution completed successfully

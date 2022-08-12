@@ -1,0 +1,46 @@
+<title>Vdbench output/skew.html</title><pre>
+Workload skew report
+
+Skew information will only be generated if:
+ - there is more than one Workload Definition (WD/FWD)
+ - there is more than one Storage Definition (SD/FSD)
+ - there is more than one Host
+ - there is more than one Slave
+(Though these rules may be ignored from time to time).
+
+
+Link to Run Definitions:         <A HREF="#_2121744517">rd1 For loops: None</A>
+                                 <A HREF="#_1066376662">rd2 For loops: None</A>
+
+
+<a name="_2121744517"></a><i><b>14:33:35.003 Starting RD=rd1; I/O rate: Uncontrolled MAX; elapsed=20 warmup=10; For loops: None</b></i>
+
+14:34:05.125 
+14:34:05.125 Counts reported below are for non-warmup intervals.
+14:34:05.127 
+14:34:05.127                    i/o   MB/sec   bytes   read     resp     read    write     resp     resp queue 
+14:34:05.127 Slave:            rate  1024**2     i/o    pct     time     resp     resp      max   stddev depth 
+14:34:05.128 localhost-0   75942.85   296.65    4096   0.00    0.096    0.000    0.096    6.401    0.029   7.3 
+14:34:05.128 localhost-1   75985.90   296.82    4096   0.00    0.096    0.000    0.096    6.779    0.030   7.3 
+14:34:05.129 Total        151928.75   593.47    4096   0.00    0.096    0.000    0.096    6.779    0.029  14.5 
+14:34:05.130 
+14:34:05.130                    i/o   MB/sec   bytes   read     resp     read    write     resp     resp queue 
+14:34:05.130 SD:               rate  1024**2     i/o    pct     time     resp     resp      max   stddev depth 
+14:34:05.130 sd1           75933.75   296.62    4096   0.00    0.096    0.000    0.096    6.779    0.029   7.3 
+14:34:05.130 sd2           75995.00   296.86    4096   0.00    0.096    0.000    0.096    6.551    0.029   7.3 
+14:34:05.132 Total        151928.75   593.47    4096   0.00    0.096    0.000    0.096    6.779    0.029  14.5 
+
+<a name="_1066376662"></a><i><b>14:34:06.001 Starting RD=rd2; I/O rate: Uncontrolled MAX; elapsed=20 warmup=10; For loops: None</b></i>
+
+14:34:36.033 
+14:34:36.033                    i/o   MB/sec   bytes   read     resp     read    write     resp     resp queue 
+14:34:36.033 Slave:            rate  1024**2     i/o    pct     time     resp     resp      max   stddev depth 
+14:34:36.033 localhost-0   56035.30   218.89    4096 100.00    0.141    0.141    0.000    5.288    0.026   7.9 
+14:34:36.033 localhost-1   56015.10   218.81    4096 100.00    0.141    0.141    0.000    5.313    0.026   7.9 
+14:34:36.033 Total        112050.40   437.70    4096 100.00    0.141    0.141    0.000    5.313    0.026  15.8 
+14:34:36.034 
+14:34:36.034                    i/o   MB/sec   bytes   read     resp     read    write     resp     resp queue 
+14:34:36.034 SD:               rate  1024**2     i/o    pct     time     resp     resp      max   stddev depth 
+14:34:36.034 sd1           55831.30   218.09    4096 100.00    0.141    0.141    0.000    5.313    0.026   7.9 
+14:34:36.034 sd2           56219.10   219.61    4096 100.00    0.140    0.140    0.000    5.069    0.026   7.9 
+14:34:36.034 Total        112050.40   437.70    4096 100.00    0.141    0.141    0.000    5.313    0.026  15.8 
