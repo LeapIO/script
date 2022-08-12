@@ -2,7 +2,6 @@
 #获取盘符信息
 dev_str=$1
 dev_list=($(echo $dev_str | sed 's/|/ /g'))
-#要执行的指令参数列表
 #numjobs 线程数
 #ioengine 指定IO引擎  sync、libaio、psync、vsync、mmap等等
 #iodepth 队列深度
@@ -11,6 +10,7 @@ dev_list=($(echo $dev_str | sed 's/|/ /g'))
 #runtime 测试时间
 #rw     读写方式
 #rwmixread 混合读写读占的比例 eg:70 == 70%read 30write
+#要执行的指令参数列表（一般只用修改此数组）
 #格式 numjobs_ioengine_iodepth_bs_size_runtime_rw_rwmixread
 fun_list=('10_libaio_8_4K_1G_60_read'
 	#'1_libaio_1_1K_5G_600_randread'
