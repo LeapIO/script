@@ -38,18 +38,35 @@ do
 done
 echo "pcie接口: ${!mapping[*]}"
 echo "pcie相应的设备数量: ${mapping[*]}"
-
-echo "输入测试接口"
-read pcie_add
-pcie_dev_num=${mapping[$pcie_add]}
-for((i=0;i<${#pci_list[@]};i++))
+#--------------------------------------
+# echo "输入测试接口"
+# read pcie_add
+# pcie_dev_num=${mapping[$pcie_add]}
+# for((i=0;i<${#pci_list[@]};i++))
+# do
+#         if [ $pcie_add -eq ${pci_list[$i]} ]
+#         then
+#                 pcie=${disklist[*]:$i:$pcie_dev_num}
+#                 break
+#         fi
+# done
+#-------------------------------------
+echo "输入测试接口 接口之间用空格连接 如4 5 6"
+read str_1
+shuzustr=($str1)
+for pcie_add in ${shuzustr[*]}
 do
+    pcie_dev_num=${mapping[$pcie_add]}
+    for((i=0;i<${#pci_list[@]};i++))
+    do
         if [ $pcie_add -eq ${pci_list[$i]} ]
         then
-                pcie=${disklist[*]:$i:$pcie_dev_num}
+                pcie=(${pcie[*]}  ${disklist[*]:$i:$pcie_dev_num})
                 break
         fi
+    done
 done
+#-----------------------------------
 echo "接口下的磁盘："
 echo ${pcie[*]}
 
