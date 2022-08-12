@@ -141,6 +141,6 @@ done
 ./fio.sh $dev_str
 
 #调用vdbench
-./vdbench.sh $dev_str
+./gen_vdbench_config.sh $dev_str
 vdbenchPath="/root/vdbench/vdbench"
 ${vdbenchPath} -f ./vdbench.conf -o ./vdbench/output
