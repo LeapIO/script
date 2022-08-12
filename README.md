@@ -17,5 +17,5 @@ test scripts or tools, etc
 3. 调用vdbench
    需要修改 vdbenchPath="/root/vdbench/vdbench" 这个参数值（vdbench的安装目录下的vdbench脚本位置）  
    vdbench指令参数配置主要由 gen_vdbench_config.sh这个脚本生成。  
-   若需要修改vdbench的运行参数，直间修改gen_vdbench_config.sh此脚本内容。
+   若需要修改vdbench的运行参数，直接修改gen_vdbench_config.sh此脚本内容。
     
