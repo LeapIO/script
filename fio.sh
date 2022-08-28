@@ -47,7 +47,7 @@ function analysis_para(){
 	if [ $isrw -eq 0 ];then
 		fio -filename=$1 -direct=1 -group_reporting -name=${1}"_"${2} -thread -numjobs=$numjobs -ioengine=$ioengine -iodepth=$iodepth -bs=$bs -size=$size -runtime=$runtime -rw=$rw
 	else
-		fio -filename=$2 -direct=1 -group_reporting -name=${1}"_"${2} -thread -numjobs=$numjobs -ioengine=$ioengine -iodepth=$iodepth -bs=$bs -size=$size -runtime=$runtime -rw=$rw -rwmixread=$rwmixread
+		fio -filename=$1 -direct=1 -group_reporting -name=${1}"_"${2} -thread -numjobs=$numjobs -ioengine=$ioengine -iodepth=$iodepth -bs=$bs -size=$size -runtime=$runtime -rw=$rw -rwmixread=$rwmixread
 	fi
 }
 ###外层循环是要执行的指令 内层循环是要执行的盘符
