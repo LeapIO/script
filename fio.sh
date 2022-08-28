@@ -55,6 +55,6 @@ for fun_name in ${fun_list[@]}
 do
 	for device_name in ${dev_list[@]}
 	do
-		analysis_para $device_name $fun_name
+		analysis_para '/dev/'$device_name $fun_name
 	done
 done
